@@ -3,7 +3,7 @@ Summary:	X.org video driver for VIA chipsets with onboard unichrome graphics
 Summary(pl.UTF-8):	Sterownik obrazu X.org dla układów zintegrowanych VIA
 Name:		xorg-driver-video-openchrome
 Version:	0.1.%{snap}
-Release:	1
+Release:	2
 License:	MIT
 Group:		X11/Applications
 # svn export http://svn.openchrome.org/svn/branches/experimental_branch xf86-video-openchrome
