@@ -19,6 +19,7 @@ BuildRequires:	libdrm-devel >= 2.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	rpmbuild(macros) >= 1.389
+BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXvMC-devel
 BuildRequires:	xorg-lib-libpciaccess-devel >= 0.8.0
 BuildRequires:	xorg-proto-fontsproto-devel
@@ -26,11 +27,11 @@ BuildRequires:	xorg-proto-glproto-devel
 BuildRequires:	xorg-proto-randrproto-devel
 BuildRequires:	xorg-proto-renderproto-devel
 BuildRequires:	xorg-proto-videoproto-devel
-BuildRequires:	xorg-proto-xextproto-devel
+BuildRequires:	xorg-proto-xextproto-devel >= 7.0.99.1
 BuildRequires:	xorg-proto-xf86driproto-devel
 BuildRequires:	xorg-util-util-macros >= 0.99.2
 BuildRequires:	xorg-xserver-server-devel >= 1.0.99.901
-%requires_xorg_xserver_videodrv
+%{?requires_xorg_xserver_videodrv}
 Requires:	xorg-xserver-libdri >= 1.0.99.901
 Requires:	xorg-xserver-libglx >= 1.0.99.901
 Requires:	xorg-xserver-server >= 1.0.99.901
@@ -42,17 +43,37 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 X.org video driver for VIA chipsets with integrated Unichrome graphics
 engine.
 
-It supports VIA CLE266, KM400/KN400, CN400, CN700, K8M800/K8N800,
-PM800/PN800, P4M800Pro, VN800, PM880, K8M890/K8N890, CN896, VN896 and
-P4M900 chipsets.
+It supports the following VIA chipsets:
+- CLE266 (VT3122),
+- CN400, CN700,
+- KM400/KN400/P4M800 (VT3205),
+- K8M800/K8N800 (VT3204),
+- PM800/PM880/PN800/CN400 (VT3259),
+- VM800/VN800/CN700/P4M800Pro (VT3314),
+- CX700 (VT3324),
+- P4M890 (VT3327),
+- K8M890/K8N890 (VT3336),
+- P4M900/CN896/VN896 (VT3364),
+- VX800 (VT3353),
+- VX855 (VT3409).
 
 %description -l pl.UTF-8
 Sterownik obrazu X.org do układów VIA ze zintegrowanym silnikiem
 graficznym Unichrome.
 
-Obsługuje układy VIA CLE266, KM400/KN400, CN400, CN700, K8M800/K8N800,
-PM800/PN800, P4M800Pro, VN800, PM880, K8M890/K8N890, CN896, VN896 oraz
-P4M900.
+Obsługuje układy VIA:
+- CLE266 (VT3122),
+- CN400, CN700,
+- KM400/KN400/P4M800 (VT3205),
+- K8M800/K8N800 (VT3204),
+- PM800/PM880/PN800/CN400 (VT3259),
+- VM800/VN800/CN700/P4M800Pro (VT3314),
+- CX700 (VT3324),
+- P4M890 (VT3327),
+- K8M890/K8N890 (VT3336),
+- P4M900/CN896/VN896 (VT3364),
+- VX800 (VT3353),
+- VX855 (VT3409).
 
 %prep
 %setup -q -n openchrome-%{version}-r%{snap}
@@ -63,8 +84,7 @@ P4M900.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure \
-	--disable-static
+%configure
 
 %{__make}
 
@@ -85,7 +105,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog
+%doc COPYING ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/xorg/modules/drivers/openchrome_drv.so
 %ifarch %{ix86} %{x8664}
 %attr(755,root,root) %{_libdir}/libchromeXvMC.so.*.*.*
