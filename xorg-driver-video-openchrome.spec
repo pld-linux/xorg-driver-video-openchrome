@@ -1,16 +1,16 @@
 
-%define		snap	812
+%define		snap	916
 
 Summary:	X.org video driver for VIA Unichrome graphics chipsets
 Summary(pl.UTF-8):	Sterownik obrazu X.org dla układów zintegrowanych VIA Unichrome
 Name:		xorg-driver-video-openchrome
 Version:	0.2.904
-Release:	1.%{snap}.3
+Release:	1.%{snap}.1
 License:	MIT
 Group:		X11/Applications
 # svn export http://svn.openchrome.org/svn/trunk -r 812 openchrome-0.2.904-r812
-Source0:	http://xatka.net/~z/PLD/openchrome-%{version}-r%{snap}.tar.bz2
-# Source0-md5:	c066faa1778433bcb61e1812922285f0
+Source0:	openchrome-%{version}-r%{snap}.tar.bz2
+# Source0-md5:	0c421b6ee73dc3bf1e6805e9bdedf92c
 URL:		http://www.openchrome.org/
 BuildRequires:	Mesa-libGL-devel
 BuildRequires:	autoconf >= 2.57
