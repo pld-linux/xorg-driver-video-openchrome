@@ -55,7 +55,8 @@ It supports the following VIA chipsets:
 - K8M890/K8N890 (VT3336),
 - P4M900/CN896/VN896 (VT3364),
 - VX800 (VT3353),
-- VX855 (VT3409).
+- VX855 (VT3409),
+- VX900.
 
 %description -l pl.UTF-8
 Sterownik obrazu X.org do układów VIA ze zintegrowanym silnikiem
@@ -73,7 +74,8 @@ Obsługuje układy VIA:
 - K8M890/K8N890 (VT3336),
 - P4M900/CN896/VN896 (VT3364),
 - VX800 (VT3353),
-- VX855 (VT3409).
+- VX855 (VT3409),
+- VX900.
 
 %prep
 %setup -q -n openchrome-%{version}-r%{snap}
