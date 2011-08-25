@@ -1,11 +1,11 @@
 
+%define		rel		2
 %define		snap	918
-
 Summary:	X.org video driver for VIA Unichrome graphics chipsets
 Summary(pl.UTF-8):	Sterownik obrazu X.org dla układów zintegrowanych VIA Unichrome
 Name:		xorg-driver-video-openchrome
 Version:	0.2.904
-Release:	1.%{snap}.1
+Release:	1.%{snap}.%{rel}
 License:	MIT
 Group:		X11/Applications
 # svn export http://svn.openchrome.org/svn/trunk -r 812 openchrome-0.2.904-r812
@@ -35,6 +35,7 @@ BuildRequires:	xorg-xserver-server-devel >= 1.0.99.901
 Requires:	xorg-xserver-libdri >= 1.0.99.901
 Requires:	xorg-xserver-libglx >= 1.0.99.901
 Requires:	xorg-xserver-server >= 1.0.99.901
+Provides:	xorg-driver-video
 Obsoletes:	X11-driver-via < 1:7.0.0
 Obsoletes:	XFree86-driver-via < 1:7.0.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
