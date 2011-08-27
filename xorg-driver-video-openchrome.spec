@@ -1,5 +1,5 @@
 
-%define		rel		2
+%define		rel		3
 %define		snap	918
 Summary:	X.org video driver for VIA Unichrome graphics chipsets
 Summary(pl.UTF-8):	Sterownik obrazu X.org dla układów zintegrowanych VIA Unichrome
