@@ -1,16 +1,12 @@
-
-%define		rel		3
-%define		snap	918
 Summary:	X.org video driver for VIA Unichrome graphics chipsets
 Summary(pl.UTF-8):	Sterownik obrazu X.org dla układów zintegrowanych VIA Unichrome
 Name:		xorg-driver-video-openchrome
-Version:	0.2.904
-Release:	1.%{snap}.%{rel}
+Version:	0.2.905
+Release:	1
 License:	MIT
 Group:		X11/Applications
-# svn export http://svn.openchrome.org/svn/trunk -r 812 openchrome-0.2.904-r812
-Source0:	openchrome-%{version}-r%{snap}.tar.bz2
-# Source0-md5:	e9305000f517e873085c80710741ccb2
+Source0:	http://xorg.freedesktop.org/releases/individual/driver/xf86-video-openchrome-%{version}.tar.bz2
+# Source0-md5:	51871431a4a9204ab8ec79335c0cc041
 URL:		http://www.openchrome.org/
 BuildRequires:	Mesa-libGL-devel
 BuildRequires:	autoconf >= 2.57
@@ -29,7 +25,7 @@ BuildRequires:	xorg-proto-renderproto-devel
 BuildRequires:	xorg-proto-videoproto-devel
 BuildRequires:	xorg-proto-xextproto-devel >= 7.0.99.1
 BuildRequires:	xorg-proto-xf86driproto-devel
-BuildRequires:	xorg-util-util-macros >= 0.99.2
+BuildRequires:	xorg-util-util-macros >= 1.8
 BuildRequires:	xorg-xserver-server-devel >= 1.0.99.901
 %{?requires_xorg_xserver_videodrv}
 Requires:	xorg-xserver-libdri >= 1.0.99.901
@@ -57,7 +53,7 @@ It supports the following VIA chipsets:
 - P4M900/CN896/VN896 (VT3364),
 - VX800 (VT3353),
 - VX855 (VT3409),
-- VX900.
+- VX900 (VT3410).
 
 %description -l pl.UTF-8
 Sterownik obrazu X.org do układów VIA ze zintegrowanym silnikiem
@@ -76,10 +72,10 @@ Obsługuje układy VIA:
 - P4M900/CN896/VN896 (VT3364),
 - VX800 (VT3353),
 - VX855 (VT3409),
-- VX900.
+- VX900 (VT3410).
 
 %prep
-%setup -q -n openchrome-%{version}-r%{snap}
+%setup -q -n xf86-video-openchrome-%{version}
 
 %build
 %{__libtoolize}
