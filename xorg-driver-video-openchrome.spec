@@ -1,12 +1,12 @@
 Summary:	X.org video driver for VIA Unichrome graphics chipsets
 Summary(pl.UTF-8):	Sterownik obrazu X.org dla układów zintegrowanych VIA Unichrome
 Name:		xorg-driver-video-openchrome
-Version:	0.2.905
-Release:	2
+Version:	0.2.906
+Release:	1
 License:	MIT
 Group:		X11/Applications
 Source0:	http://xorg.freedesktop.org/releases/individual/driver/xf86-video-openchrome-%{version}.tar.bz2
-# Source0-md5:	51871431a4a9204ab8ec79335c0cc041
+# Source0-md5:	244507baf1900f1e923604c4a0f05925
 URL:		http://www.openchrome.org/
 BuildRequires:	Mesa-libGL-devel
 BuildRequires:	autoconf >= 2.57
@@ -16,6 +16,7 @@ BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	rpmbuild(macros) >= 1.389
 BuildRequires:	xorg-lib-libX11-devel
+BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXvMC-devel
 BuildRequires:	xorg-lib-libpciaccess-devel >= 0.8.0
 BuildRequires:	xorg-proto-fontsproto-devel
@@ -93,7 +94,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{_libdir}/xorg/modules/*/*.la \
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/xorg/modules/*/*.la \
 	$RPM_BUILD_ROOT%{_libdir}/libchromeXvMC*.{la,so}
 
 %clean
