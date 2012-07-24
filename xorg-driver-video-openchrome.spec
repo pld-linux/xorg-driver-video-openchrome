@@ -11,7 +11,7 @@ URL:		http://www.openchrome.org/
 BuildRequires:	Mesa-libGL-devel
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
-BuildRequires:	libdrm-devel >= 2.0
+BuildRequires:	libdrm-devel >= 2.2
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	rpmbuild(macros) >= 1.389
@@ -29,6 +29,7 @@ BuildRequires:	xorg-proto-xf86driproto-devel
 BuildRequires:	xorg-util-util-macros >= 1.8
 BuildRequires:	xorg-xserver-server-devel >= 1.0.99.901
 %{?requires_xorg_xserver_videodrv}
+Requires:	libdrm >= 2.2
 Requires:	xorg-xserver-libdri >= 1.0.99.901
 Requires:	xorg-xserver-libglx >= 1.0.99.901
 Requires:	xorg-xserver-server >= 1.0.99.901
