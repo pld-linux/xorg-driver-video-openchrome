@@ -7,6 +7,7 @@ License:	MIT
 Group:		X11/Applications
 Source0:	http://xorg.freedesktop.org/releases/individual/driver/xf86-video-openchrome-%{version}.tar.bz2
 # Source0-md5:	f21abcdf87f73b5b547491281e894c87
+Patch0:		build-fix.patch
 URL:		http://www.openchrome.org/
 BuildRequires:	Mesa-libGL-devel
 BuildRequires:	autoconf >= 2.57
@@ -79,6 +80,7 @@ Obsługuje układy VIA:
 
 %prep
 %setup -q -n xf86-video-openchrome-%{version}
+%patch0 -p1
 
 %build
 %{__libtoolize}
