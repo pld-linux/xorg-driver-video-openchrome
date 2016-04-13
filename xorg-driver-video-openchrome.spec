@@ -1,13 +1,12 @@
 Summary:	X.org video driver for VIA Unichrome graphics chipsets
 Summary(pl.UTF-8):	Sterownik obrazu X.org dla układów zintegrowanych VIA Unichrome
 Name:		xorg-driver-video-openchrome
-Version:	0.3.3
-Release:	7
+Version:	0.4.0
+Release:	1
 License:	MIT
 Group:		X11/Applications
 Source0:	http://xorg.freedesktop.org/releases/individual/driver/xf86-video-openchrome-%{version}.tar.bz2
-# Source0-md5:	f21abcdf87f73b5b547491281e894c87
-Patch0:		build-fix.patch
+# Source0-md5:	eff2ca08a530c67144531466500af8cb
 URL:		http://www.openchrome.org/
 BuildRequires:	Mesa-libGL-devel
 BuildRequires:	autoconf >= 2.57
@@ -80,7 +79,6 @@ Obsługuje układy VIA:
 
 %prep
 %setup -q -n xf86-video-openchrome-%{version}
-%patch0 -p1
 
 %build
 %{__libtoolize}
