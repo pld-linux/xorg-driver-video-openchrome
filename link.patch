@@ -1,0 +1,16 @@
+--- xf86-video-openchrome-0.6.0/src/xvmc/Makefile.am~	2016-08-29 05:17:42.000000000 +0200
++++ xf86-video-openchrome-0.6.0/src/xvmc/Makefile.am	2021-11-03 17:54:01.503466137 +0100
+@@ -26,11 +26,11 @@
+ 
+ libchromeXvMC_la_CFLAGS = @XORG_CFLAGS@ @DRI_CFLAGS@ @XVMC_CFLAGS@ -I$(top_srcdir)/src -I$(top_srcdir)/src/xvmc -DTRUE=1 -DFALSE=0
+ libchromeXvMC_la_LDFLAGS = -version-number 1:0:0
+-libchromeXvMC_la_LIBADD = @DRI_LIBS@ @XVMC_LIBS@
++libchromeXvMC_la_LIBADD = @DRI_LIBS@ @XVMC_LIBS@ -lXv
+ 
+ libchromeXvMCPro_la_CFLAGS = @XORG_CFLAGS@ @DRI_CFLAGS@ @XVMC_CFLAGS@ -I$(top_srcdir)/src -I$(top_srcdir)/src/xvmc -DTRUE=1 -DFALSE=0
+ libchromeXvMCPro_la_LDFLAGS = -version-number 1:0:0
+-libchromeXvMCPro_la_LIBADD = @DRI_LIBS@ @XVMC_LIBS@
++libchromeXvMCPro_la_LIBADD = @DRI_LIBS@ @XVMC_LIBS@ -lXv
+ else
+ EXTRA_DIST = \
+ 	driDrawable.c \
